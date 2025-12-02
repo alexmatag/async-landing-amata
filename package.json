@@ -1,0 +1,23 @@
+{
+  "name": "async-landing-amata",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexmatag/async-landing-amata.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexmatag/async-landing-amata/issues"
+  },
+  "homepage": "https://github.com/alexmatag/async-landing-amata#readme",
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
