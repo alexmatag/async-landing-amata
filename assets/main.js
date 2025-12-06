@@ -15,6 +15,11 @@ async function fetchData(urlApi) {
     return data;
 }
 
+function limitTextLength(text, maxLength) {
+    if (!text) return '';
+    return text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
+}
+
 (async () => {
     try {
         const itemsNASA = await fetchData(API);
@@ -31,14 +36,17 @@ async function fetchData(urlApi) {
                             onerror="this.onerror=null; this.src='./img/space-banner.png';"
                         />
                     </div>
-                    <div class="mt-4 flex justify-between">
-                        <h3 class="text-sm text-slate-200">
+                    <div class="mt-4 flex flex-col justify-between">
+                        <h3 class="text-lg font-bold text-slate-200">
                             <span aria-hidden="true" class="absolute inset-0"></span>
                             ${item.data?.[0]?.title}
                         </h3>
+                        <p class="text-sm block text-slate-200">
+                            ${limitTextLength(item.data?.[0]?.description, 120)}
+                        </p>
                     </div>
                 </div>
-            `).slice(0, 4).join('')}
+            `).slice(0, 8).join('')}
         `;
         content.innerHTML = view;
     } catch (error) {
